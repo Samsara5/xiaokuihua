@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserDao">
+    <resultMap type="User" id="paperResultMap" >
+        <id property="userid" column="userid"/>
+        <result property="name" column="name"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="universityid" column="universityid"/>
+        <result property="addtime" column="addtime"/>
+        <result property="department" column="department"/>
+        <result property="sex" column="sex"/>
+        <result property="noteid" column="noteid"/>
+        <result property="courses" column="courses"/>
+    </resultMap>
+    <select id="getusers" resultMap="paperResultMap">
+        SELECT * FROM user
+    </select>
+
+</mapper>
