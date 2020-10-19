@@ -3,43 +3,36 @@ package com.pojo;
 import java.util.Date;
 
 public class User {
-    private int userid;
+    private Integer userid;
+
     private String name;
+
     private String username;
+
     private String password;
+
     private String phone;
+
     private String email;
-    private int universityid;
+
+    private Integer universityid;
+
     private Date addtime;
-    private int department;
-    private int sex;
-    private int noteid;
+
+    private Integer department;
+
+    private Integer sex;
+
     private String courses;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userid=" + userid +
-                ", name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", universityid=" + universityid +
-                ", addtime=" + addtime +
-                ", department=" + department +
-                ", sex=" + sex +
-                ", noteid=" + noteid +
-                ", courses='" + courses + '\'' +
-                '}';
-    }
+    private String noteid;
 
-    public int getId() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setId(int id) {
-        this.userid = id;
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
     public String getName() {
@@ -47,7 +40,7 @@ public class User {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 
     public String getUsername() {
@@ -55,7 +48,7 @@ public class User {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username == null ? null : username.trim();
     }
 
     public String getPassword() {
@@ -63,7 +56,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password == null ? null : password.trim();
     }
 
     public String getPhone() {
@@ -71,7 +64,7 @@ public class User {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.phone = phone == null ? null : phone.trim();
     }
 
     public String getEmail() {
@@ -79,14 +72,14 @@ public class User {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email == null ? null : email.trim();
     }
 
-    public int getUniversityid() {
+    public Integer getUniversityid() {
         return universityid;
     }
 
-    public void setUniversityid(int universityid) {
+    public void setUniversityid(Integer universityid) {
         this.universityid = universityid;
     }
 
@@ -98,28 +91,20 @@ public class User {
         this.addtime = addtime;
     }
 
-    public int getDepartment() {
+    public Integer getDepartment() {
         return department;
     }
 
-    public void setDepartment(int department) {
+    public void setDepartment(Integer department) {
         this.department = department;
     }
 
-    public int getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
-    }
-
-    public int getNoteid() {
-        return noteid;
-    }
-
-    public void setNoteid(int noteid) {
-        this.noteid = noteid;
     }
 
     public String getCourses() {
@@ -127,6 +112,14 @@ public class User {
     }
 
     public void setCourses(String courses) {
-        this.courses = courses;
+        this.courses = courses == null ? null : courses.trim();
+    }
+
+    public String getNoteid() {
+        return noteid;
+    }
+
+    public void setNoteid(String noteid) {
+        this.noteid = noteid == null ? null : noteid.trim();
     }
 }
