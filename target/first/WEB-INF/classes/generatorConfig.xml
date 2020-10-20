@@ -44,9 +44,8 @@
 
         <!-- 指定每个表的生成策略 -->
 <!--        <table tableName="tec_user" domainObjectName="User"></table>-->
-        <table tableName="menulist" domainObjectName="menu"></table>
 <!--        <table tableName="role" domainObjectName="WorkType"></table>-->
-<!--        <table tableName="course" domainObjectName="Book"></table>-->
+            <table tableName="tec_course" domainObjectName="Course"></table>
 <!--        <table tableName="discuss" domainObjectName="BookType"></table>-->
 <!--        <table tableName="grade" domainObjectName="Borrow"></table>-->
 <!--        <table tableName="log" domainObjectName="Buy"></table>-->

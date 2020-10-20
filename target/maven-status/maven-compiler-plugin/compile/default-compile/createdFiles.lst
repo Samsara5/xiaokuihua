@@ -1,6 +1,8 @@
 com\dao\UserMapper.class
+com\pojo\CourseExample.class
+com\pojo\CourseExample$Criteria.class
+com\pojo\Course.class
 com\pojo\Message.class
-com\config\AccessOriginInterceptor.class
 com\service\serviceImpl\UserServiceImpl.class
 com\pojo\menu.class
 com\dao\menuMapper.class
@@ -11,7 +13,11 @@ com\pojo\UserExample$GeneratedCriteria.class
 com\service\UserService.class
 com\pojo\UserExample.class
 com\pojo\menuExample$GeneratedCriteria.class
+com\pojo\CourseExample$GeneratedCriteria.class
 com\pojo\menuExample$Criteria.class
+com\service\serviceImpl\CourseServiceImpl.class
+com\dao\CourseMapper.class
+com\pojo\CourseExample$Criterion.class
 com\pojo\UserExample$Criteria.class
 com\utils\Token.class
 com\pojo\menuExample.class

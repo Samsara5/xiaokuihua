@@ -60,6 +60,15 @@ public class UserServiceImpl implements UserService {
         if (check.getPassword().equals(password))return true;
         return false;
     }
+
+    public User findUserByusername(String username){
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andUsernameEqualTo(username);
+        List<User> user = userMapper.selectByExample(userExample);
+        User check = user.get(0);
+        return check;
+    }
+
     public String getmenu() throws JsonProcessingException {
         List<menu> menuList =  menu.selectByExample(null);
         ObjectMapper mapper = new ObjectMapper();
