@@ -44,11 +44,14 @@
 
         <!-- 指定每个表的生成策略 -->
 <!--        <table tableName="tec_user" domainObjectName="User"></table>-->
-<!--        <table tableName="role" domainObjectName="WorkType"></table>-->
-            <table tableName="tec_course" domainObjectName="Course"></table>
-<!--        <table tableName="discuss" domainObjectName="BookType"></table>-->
-<!--        <table tableName="grade" domainObjectName="Borrow"></table>-->
-<!--        <table tableName="log" domainObjectName="Buy"></table>-->
+<!--        <table tableName="tec_course_total" domainObjectName="Coursetolal"></table>-->
+<!--         <table tableName="tec_course_unit" domainObjectName="Courseunit"></table>-->
+<!--         <table tableName="tec_course_unit_file" domainObjectName="Courseunitfile"></table>-->
+<!--         <table tableName="tec_course_unit_voide" domainObjectName="Courseunitvideo"></table>-->
+<!--            <table tableName="question_bank" domainObjectName="questionbank"></table>-->
+            <table tableName="question_total" domainObjectName="questiontotal"></table>
+<!--            <table tableName="tec_grade" domainObjectName="quetiongrade"></table>-->
+<!--            <table tableName="log" domainObjectName="Buy"></table>-->
 <!--        <table tableName="note" domainObjectName="Employee"></table>-->
 <!--        <table tableName="replay" domainObjectName="User"></table>-->
 <!--        <table tableName="homework" domainObjectName="Punishmenet"></table>-->

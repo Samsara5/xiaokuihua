@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.questionbankMapper" >
+  <resultMap id="BaseResultMap" type="com.pojo.questionbank" >
+    <result column="bankid" property="bankid" jdbcType="INTEGER" />
+    <result column="quetion" property="quetion" jdbcType="VARCHAR" />
+    <result column="answerA" property="answera" jdbcType="VARCHAR" />
+    <result column="answerB" property="answerb" jdbcType="VARCHAR" />
+    <result column="answerC" property="answerc" jdbcType="VARCHAR" />
+    <result column="answerD" property="answerd" jdbcType="VARCHAR" />
+    <result column="rightsanswer" property="rightsanswer" jdbcType="VARCHAR" />
+    <result column="ismultiple" property="ismultiple" jdbcType="INTEGER" />
+    <result column="grade" property="grade" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    bankid, quetion, answerA, answerB, answerC, answerD, rightsanswer, ismultiple, grade
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pojo.questionbankExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from question_bank
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.pojo.questionbankExample" >
+    delete from question_bank
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pojo.questionbank" >
+    insert into question_bank (bankid, quetion, answerA, 
+      answerB, answerC, answerD, 
+      rightsanswer, ismultiple, grade
+      )
+    values (#{bankid,jdbcType=INTEGER}, #{quetion,jdbcType=VARCHAR}, #{answera,jdbcType=VARCHAR}, 
+      #{answerb,jdbcType=VARCHAR}, #{answerc,jdbcType=VARCHAR}, #{answerd,jdbcType=VARCHAR}, 
+      #{rightsanswer,jdbcType=VARCHAR}, #{ismultiple,jdbcType=INTEGER}, #{grade,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pojo.questionbank" >
+    insert into question_bank
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="bankid != null" >
+        bankid,
+      </if>
+      <if test="quetion != null" >
+        quetion,
+      </if>
+      <if test="answera != null" >
+        answerA,
+      </if>
+      <if test="answerb != null" >
+        answerB,
+      </if>
+      <if test="answerc != null" >
+        answerC,
+      </if>
+      <if test="answerd != null" >
+        answerD,
+      </if>
+      <if test="rightsanswer != null" >
+        rightsanswer,
+      </if>
+      <if test="ismultiple != null" >
+        ismultiple,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="bankid != null" >
+        #{bankid,jdbcType=INTEGER},
+      </if>
+      <if test="quetion != null" >
+        #{quetion,jdbcType=VARCHAR},
+      </if>
+      <if test="answera != null" >
+        #{answera,jdbcType=VARCHAR},
+      </if>
+      <if test="answerb != null" >
+        #{answerb,jdbcType=VARCHAR},
+      </if>
+      <if test="answerc != null" >
+        #{answerc,jdbcType=VARCHAR},
+      </if>
+      <if test="answerd != null" >
+        #{answerd,jdbcType=VARCHAR},
+      </if>
+      <if test="rightsanswer != null" >
+        #{rightsanswer,jdbcType=VARCHAR},
+      </if>
+      <if test="ismultiple != null" >
+        #{ismultiple,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pojo.questionbankExample" resultType="java.lang.Integer" >
+    select count(*) from question_bank
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update question_bank
+    <set >
+      <if test="record.bankid != null" >
+        bankid = #{record.bankid,jdbcType=INTEGER},
+      </if>
+      <if test="record.quetion != null" >
+        quetion = #{record.quetion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.answera != null" >
+        answerA = #{record.answera,jdbcType=VARCHAR},
+      </if>
+      <if test="record.answerb != null" >
+        answerB = #{record.answerb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.answerc != null" >
+        answerC = #{record.answerc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.answerd != null" >
+        answerD = #{record.answerd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rightsanswer != null" >
+        rightsanswer = #{record.rightsanswer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ismultiple != null" >
+        ismultiple = #{record.ismultiple,jdbcType=INTEGER},
+      </if>
+      <if test="record.grade != null" >
+        grade = #{record.grade,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update question_bank
+    set bankid = #{record.bankid,jdbcType=INTEGER},
+      quetion = #{record.quetion,jdbcType=VARCHAR},
+      answerA = #{record.answera,jdbcType=VARCHAR},
+      answerB = #{record.answerb,jdbcType=VARCHAR},
+      answerC = #{record.answerc,jdbcType=VARCHAR},
+      answerD = #{record.answerd,jdbcType=VARCHAR},
+      rightsanswer = #{record.rightsanswer,jdbcType=VARCHAR},
+      ismultiple = #{record.ismultiple,jdbcType=INTEGER},
+      grade = #{record.grade,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

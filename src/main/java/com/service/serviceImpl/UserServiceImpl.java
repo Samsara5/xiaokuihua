@@ -11,6 +11,7 @@ import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -75,5 +76,21 @@ public class UserServiceImpl implements UserService {
         String res = mapper.writeValueAsString(menuList);
         System.out.println(res);
         return res;
+    }
+
+    public String getClassinfo(int Courseid) throws JsonProcessingException {
+        List<User> users = userMapper.selectByExample(null);
+        List<User> mateinfo = new ArrayList<>();
+        for (User u:users) {
+            String[] split = u.getCourses().split(",");
+            for (String usercourseid:split) {
+                if (Integer.valueOf(usercourseid) == Courseid){
+                    mateinfo.add(u);
+                    break;
+                }
+            }
+        }
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.writeValueAsString(mateinfo);
     }
 }
